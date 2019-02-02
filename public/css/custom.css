@@ -2,7 +2,7 @@
     background: #fff none repeat scroll 0 0;
     border: 1px solid #e1e8ed;
     border-radius: 6px;
-    height: 200px;
+    height: 250px;
 }
 .twPc-bg {
     background-image: url("https://pbs.twimg.com/profile_banners/50988711/1384539792/600x200");
@@ -10,7 +10,7 @@
     background-size: 100% auto;
     border-bottom: 1px solid #e1e8ed;
     border-radius: 4px 4px 0 0;
-    height: 95px;
+    height: 150px;
     width: 100%;
 }
 .twPc-block {
