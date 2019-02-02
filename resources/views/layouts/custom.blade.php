@@ -9,6 +9,35 @@
 
 <div class="container-fluid">
     <div class="row">
+        <a class="navbar-brand fa fa-home fa-lg">Laradev</a>
+
+             <form class="navbar-form navbar-left" role="search" method="get" action="">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Question
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                </a>
+            </li>
+        </ul>
+
+
+    </div>
+
+
+
+    <div class="row">
 
         <!-- code start -->
 
@@ -56,20 +85,7 @@
                             </a>
                         </li>
 
-                        <li class="twPc-ArrangeSizeFit" style="float: right;">
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    {{ Auth::user()->name }}
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="#" data-toggle="modal" data-target="#myModal">Profile</a></li>
-                                    <li><a href="#">Change password</a></li>
-                                    <li><a href="{{ url('/logout') }}">Log out</a></li>
 
-                                </ul>
-                            </div>
-                        </li>
                     </ul>
 
 
@@ -92,8 +108,9 @@
             <br>
             <ul class="list-unstyled">
                 <li> <p class="">{{ Auth::user()->status }}</li>
-                <li> <a href="" class="">Website</a></li>
-                <li> <a href="{{ url('/messages') }}" class="">Messages</a></li>
+                <li> <a href=""> <i class="fa fa-link"></i>&nbsp;Website</a></li>
+                <li> <a href="{{ url('/messages') }}"> <i class="fa fa-envelope"></i>&nbsp;Messages</a></li>
+                <li> <a href="" data-toggle="modal" data-target="#myModal"> <i class="fa fa-user"></i>&nbsp;Profile</a></li>
 
             </ul>
 
@@ -123,29 +140,29 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Update Profile</h4>
+                        <h4 class="modal-title text-primary">Update Profile</h4>
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal" action="{{ url('/updateprofile') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <!-- <input type="hidden" name="_method" value="PUT">-->
 
-                            <div class="form-group">
+                            <div class="form-group" style="padding: 8px;">
                                 <label class="control-label">Profile pic</label>
-                                <input type="file" class="form-control" name="prof_pic" value="" required />
+                                <input type="file"  name="prof_pic" value="" required />
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" style="padding: 8px;">
                                 <label class="control-label">Username</label>
                                 <input type="text" class="form-control" name="username" value="{{ Auth::user()->name }}" required />
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" style="padding: 8px;">
                                 <label class="control-label">Status</label>
-                                <textarea class="form-control" name="status" required > {{ Auth::user()->status }}</textarea>
+                                <textarea rows="5" class="form-control" name="status" required > {{ Auth::user()->status }}</textarea>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" style="padding: 8px;">
                                 <button type="submit" class="btn btn-success">Update</button>
                             </div>
 
@@ -161,10 +178,6 @@
                 </div>
 
             </div>
-
-@yield('modal')
-
-
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>

@@ -3,7 +3,7 @@
 
 
 @section('content')
-<div class="panel panel-success">
+<div class="panel panel-primary">
 <div class="panel-heading">
 <h4 class="text-center">Messages</h4>
 </div>
@@ -144,52 +144,3 @@
 </div>
 </div>
 @endsection
-
-@section('modal')
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Update Profile</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-horizontal" action="{{ url('/updateprofile') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <!-- <input type="hidden" name="_method" value="PUT">-->
-
-                        <div class="form-group">
-                            <label class="control-label">Profile pic</label>
-                            <input type="file" class="form-control" name="prof_pic" value="" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label">Username</label>
-                            <input type="text" class="form-control" name="username" value="{{ Auth::user()->name }}" required />
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label">Status</label>
-                            <textarea class="form-control" name="status" required > {{ Auth::user()->status }}</textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success">Update</button>
-                        </div>
-
-                    </form>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-@endsection
-
-
-
-
