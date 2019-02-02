@@ -9,6 +9,7 @@
 
 <div class="container-fluid">
     <div class="row">
+        <div class="col-md-12">
         <a class="navbar-brand fa fa-home fa-lg">Laradev</a>
 
              <form class="navbar-form navbar-left" role="search" method="get" action="">
@@ -33,6 +34,7 @@
         </ul>
 
 
+    </div>
     </div>
 
 
@@ -175,9 +177,9 @@
         </div>
 
 
-                </div>
+    </div>
 
-            </div>
+</div>
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
